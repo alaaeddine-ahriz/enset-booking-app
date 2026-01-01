@@ -1,82 +1,82 @@
 # ENSET Room Booking App
 
-Application de gestion des réservations de salles pour l'ENSET - Built with Next.js 16 and SQLite.
+Application de gestion des réservations de salles pour l'ENSET - Développée avec Next.js 16 et SQLite.
 
-## 🚀 Quick Start
+## 🚀 Démarrage Rapide
 
-### Prerequisites
+### Prérequis
 
 - Node.js 20+
-- pnpm (recommended) or npm
+- pnpm (recommandé) ou npm
 
 ### Installation
 
 ```bash
-# Clone the repository
+# Cloner le dépôt
 git clone https://github.com/alaaeddine-ahriz/enset-booking-app.git
 cd enset-booking-app
 
-# Install dependencies
+# Installer les dépendances
 pnpm install
 
-# Build better-sqlite3 native module
+# Compiler le module natif better-sqlite3
 cd node_modules/.pnpm/better-sqlite3@*/node_modules/better-sqlite3
 npm run build-release
 cd -
 
-# Seed the database with sample data
+# Initialiser la base de données avec des données de test
 npx tsx lib/db/seed.ts
 
-# Start development server
+# Lancer le serveur de développement
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) 🎉
+Ouvrir [http://localhost:3000](http://localhost:3000) 🎉
 
-## 📁 Project Structure
+## 📁 Structure du Projet
 
 ```
 ├── app/
-│   ├── api/              # API routes
+│   ├── api/              # Routes API
 │   │   ├── rooms/
 │   │   ├── reservations/
 │   │   └── user/
-│   ├── components/       # Reusable UI components
-│   ├── rooms/            # Rooms pages
-│   ├── requests/         # Admin requests page
-│   ├── reserve/          # Reservation form
-│   └── profile/          # User profile
+│   ├── components/       # Composants UI réutilisables
+│   ├── rooms/            # Pages des salles
+│   ├── requests/         # Page admin des demandes
+│   ├── reserve/          # Formulaire de réservation
+│   └── profile/          # Profil utilisateur
 ├── lib/
-│   ├── db/               # Database (SQLite)
-│   ├── repositories/     # Data access layer
-│   ├── services/         # Business logic
-│   └── types.ts          # TypeScript types
-└── data/                 # SQLite database file (auto-created)
+│   ├── db/               # Base de données (SQLite)
+│   ├── repositories/     # Couche d'accès aux données
+│   ├── services/         # Logique métier
+│   └── types.ts          # Types TypeScript
+└── data/                 # Fichier SQLite (créé automatiquement)
 ```
 
-## 🔌 API Endpoints
+## 🔌 Endpoints API
 
-| Endpoint                 | Methods            | Description                 |
-| ------------------------ | ------------------ | --------------------------- |
-| `/api/rooms`             | GET                | List rooms (with filters)   |
-| `/api/rooms/[id]`        | GET                | Room details + availability |
-| `/api/reservations`      | GET, POST          | List/Create reservations    |
-| `/api/reservations/[id]` | GET, PATCH, DELETE | Manage reservation          |
-| `/api/user/me`           | GET                | Current user + stats        |
+| Endpoint                 | Méthodes           | Description                        |
+| ------------------------ | ------------------ | ---------------------------------- |
+| `/api/rooms`             | GET                | Liste des salles (avec filtres)    |
+| `/api/rooms/[id]`        | GET                | Détails salle + disponibilités     |
+| `/api/reservations`      | GET, POST          | Lister/Créer des réservations      |
+| `/api/reservations/[id]` | GET, PATCH, DELETE | Gérer une réservation              |
+| `/api/user/me`           | GET                | Utilisateur courant + statistiques |
 
-## 🛠️ Tech Stack
+## 🛠️ Stack Technique
 
-- **Framework**: Next.js 16 (App Router)
-- **Database**: SQLite (better-sqlite3)
-- **Styling**: Tailwind CSS 4
-- **Language**: TypeScript
+- **Framework** : Next.js 16 (App Router)
+- **Base de données** : SQLite (better-sqlite3)
+- **Styles** : Tailwind CSS 4
+- **Langage** : TypeScript
 
-## 🔄 Switching Database Provider
+## 🔄 Changer de Fournisseur de Base de Données
 
-The app uses a Repository Pattern. To switch from SQLite to another provider:
+L'application utilise un Pattern Repository. Pour passer de SQLite à un autre fournisseur :
 
-1. Create new repository implementations in `lib/repositories/`
-2. Update `lib/services/index.ts`:
+1. Créer les nouvelles implémentations dans `lib/repositories/`
+2. Modifier `lib/services/index.ts` :
 
 ```typescript
 import { SupabaseRoomRepository } from "../repositories/supabase";
@@ -89,23 +89,23 @@ function createRepositories() {
 }
 ```
 
-## 📝 Available Scripts
+## 📝 Scripts Disponibles
 
 ```bash
-pnpm dev          # Start dev server
-pnpm build        # Build for production
-pnpm start        # Start production server
-npx tsx lib/db/seed.ts  # Re-seed database
+pnpm dev          # Lancer le serveur de développement
+pnpm build        # Build pour la production
+pnpm start        # Lancer le serveur de production
+npx tsx lib/db/seed.ts  # Réinitialiser la base de données
 ```
 
-## 👥 Default Users
+## 👥 Utilisateurs par Défaut
 
-After seeding, these accounts are available:
+Après initialisation, ces comptes sont disponibles :
 
-- **Souad Amitou** (Teacher) - Default logged-in user
-- **Prof. Ahmed**, **Prof. Fatima**, **Prof. Hassan** (Teachers)
-- **Admin User** (Administrator)
+- **Souad Amitou** (Enseignante) - Utilisateur connecté par défaut
+- **Prof. Ahmed**, **Prof. Fatima**, **Prof. Hassan** (Enseignants)
+- **Admin User** (Administrateur)
 
 ---
 
-Made for ENSET 🎓
+Fait pour l'ENSET 🎓
