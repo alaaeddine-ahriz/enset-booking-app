@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ENSET Room Booking App
 
-## Getting Started
+Application de gestion des réservations de salles pour l'ENSET - Built with Next.js 16 and SQLite.
 
-First, run the development server:
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js 20+
+- pnpm (recommended) or npm
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Clone the repository
+git clone https://github.com/alaaeddine-ahriz/enset-booking-app.git
+cd enset-booking-app
+
+# Install dependencies
+pnpm install
+
+# Build better-sqlite3 native module
+cd node_modules/.pnpm/better-sqlite3@*/node_modules/better-sqlite3
+npm run build-release
+cd -
+
+# Seed the database with sample data
+npx tsx lib/db/seed.ts
+
+# Start development server
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) 🎉
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+├── app/
+│   ├── api/              # API routes
+│   │   ├── rooms/
+│   │   ├── reservations/
+│   │   └── user/
+│   ├── components/       # Reusable UI components
+│   ├── rooms/            # Rooms pages
+│   ├── requests/         # Admin requests page
+│   ├── reserve/          # Reservation form
+│   └── profile/          # User profile
+├── lib/
+│   ├── db/               # Database (SQLite)
+│   ├── repositories/     # Data access layer
+│   ├── services/         # Business logic
+│   └── types.ts          # TypeScript types
+└── data/                 # SQLite database file (auto-created)
+```
 
-## Learn More
+## 🔌 API Endpoints
 
-To learn more about Next.js, take a look at the following resources:
+| Endpoint                 | Methods            | Description                 |
+| ------------------------ | ------------------ | --------------------------- |
+| `/api/rooms`             | GET                | List rooms (with filters)   |
+| `/api/rooms/[id]`        | GET                | Room details + availability |
+| `/api/reservations`      | GET, POST          | List/Create reservations    |
+| `/api/reservations/[id]` | GET, PATCH, DELETE | Manage reservation          |
+| `/api/user/me`           | GET                | Current user + stats        |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Framework**: Next.js 16 (App Router)
+- **Database**: SQLite (better-sqlite3)
+- **Styling**: Tailwind CSS 4
+- **Language**: TypeScript
 
-## Deploy on Vercel
+## 🔄 Switching Database Provider
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The app uses a Repository Pattern. To switch from SQLite to another provider:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Create new repository implementations in `lib/repositories/`
+2. Update `lib/services/index.ts`:
+
+```typescript
+import { SupabaseRoomRepository } from "../repositories/supabase";
+
+function createRepositories() {
+  return {
+    rooms: new SupabaseRoomRepository(),
+    // ...
+  };
+}
+```
+
+## 📝 Available Scripts
+
+```bash
+pnpm dev          # Start dev server
+pnpm build        # Build for production
+pnpm start        # Start production server
+npx tsx lib/db/seed.ts  # Re-seed database
+```
+
+## 👥 Default Users
+
+After seeding, these accounts are available:
+
+- **Souad Amitou** (Teacher) - Default logged-in user
+- **Prof. Ahmed**, **Prof. Fatima**, **Prof. Hassan** (Teachers)
+- **Admin User** (Administrator)
+
+---
+
+Made for ENSET 🎓
