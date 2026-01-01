@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reservation Requests (Admin)</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white pb-24">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center p-4 justify-between max-w-lg mx-auto w-full">
+<h2 class="text-xl font-bold leading-tight tracking-tight flex-1">Reservation Requests</h2>
+<div class="flex items-center justify-end">
+<button class="flex items-center justify-center rounded-full w-10 h-10 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors relative">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300">tune</span>
+<span class="absolute top-2 right-2 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-background-light dark:border-background-dark"></span>
+</button>
+</div>
+</div>
+<!-- Filter Chips -->
+<div class="max-w-lg mx-auto w-full">
+<div class="flex gap-3 px-4 pb-4 overflow-x-auto no-scrollbar scroll-smooth">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-900 dark:bg-white px-5 shadow-sm transition-transform active:scale-95">
+<p class="text-white dark:text-slate-900 text-sm font-medium leading-normal">All</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 shadow-sm transition-transform active:scale-95">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">Conflicts</p>
+<span class="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 text-red-600 text-[10px] font-bold">2</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 shadow-sm transition-transform active:scale-95">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">Urgent</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 shadow-sm transition-transform active:scale-95">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">This Week</p>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Content -->
+<div class="max-w-lg mx-auto w-full px-4 pt-2">
+<!-- Section Header -->
+<div class="flex items-center justify-between pb-3 pt-4">
+<h3 class="text-lg font-bold tracking-tight">Pending (3)</h3>
+<span class="text-xs font-medium text-slate-500 uppercase tracking-wider">Sorted by Date</span>
+</div>
+<!-- Request Card 1: Conflict -->
+<div class="group relative bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 mb-4 overflow-hidden">
+<!-- Conflict Banner -->
+<div class="bg-red-50 dark:bg-red-900/20 border-b border-red-100 dark:border-red-900/30 px-4 py-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-red-600 text-sm">warning</span>
+<p class="text-red-700 dark:text-red-300 text-xs font-semibold">Conflict with Mr. Idrissi (09:00 - 10:00)</p>
+</div>
+<div class="p-4">
+<div class="flex gap-4">
+<div class="h-14 w-14 rounded-full bg-slate-100 dark:bg-slate-700 overflow-hidden shrink-0 border border-slate-100 dark:border-slate-600">
+<img alt="Portrait of a female professor" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAVhcD__NbgsanLYMpmhkDIKJImMnyY0nrK_5nGTqf47fQIhfZ2Xe9Ap_Qk9CpXyN00_1fjNTxlMLLTegBOP3b0Mrf2dfATo2DGEx72vpJs7FpC23JFTbdsLoaZwU32ZPD-NtxWolJ9BwNB7nTBQNseoFhzuhLReQlAKYqS1GHf6PjjZvaZbGxjDmh8urIaRFHfIgMcgh1GN3K_8rzqDZ16D7wK3bX6d3RXOQ-rFLLb6ICcn4Eh5LtABpPT28vXDl1qQP7qf5jMrU"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="text-lg font-bold text-slate-900 dark:text-white truncate">Amphi 3</h4>
+<span class="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-700 px-2 py-1 text-xs font-medium text-slate-600 dark:text-slate-300 ring-1 ring-inset ring-slate-500/10">Pending</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm font-medium mt-0.5">Mrs. Benali • Computer Science</p>
+<div class="flex items-center gap-1.5 mt-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>Oct 24, 2023</span>
+<span class="mx-1">•</span>
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>08:30 - 10:30</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex gap-2 mt-5">
+<button class="flex-1 h-10 flex items-center justify-center gap-2 rounded-lg bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-300 text-sm font-bold active:bg-red-100 transition-colors">
+<span class="material-symbols-outlined text-[20px]">close</span>
+                        Refuse
+                    </button>
+<button class="flex-1 h-10 flex items-center justify-center gap-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-bold active:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+                        Modify
+                    </button>
+<button class="flex-1 h-10 flex items-center justify-center gap-2 rounded-lg bg-primary text-white text-sm font-bold shadow-sm shadow-blue-500/30 active:bg-blue-600 transition-colors">
+<span class="material-symbols-outlined text-[20px]">check</span>
+                        Validate
+                    </button>
+</div>
+</div>
+</div>
+<!-- Request Card 2: Standard -->
+<div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 mb-4 p-4">
+<div class="flex gap-4">
+<div class="h-14 w-14 rounded-full bg-slate-100 dark:bg-slate-700 overflow-hidden shrink-0 border border-slate-100 dark:border-slate-600">
+<img alt="Portrait of a male professor" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ9G-aOJJqRopktzkZq66Yw2Shdh8uvM5FLHZ0M2aDSwC_SSrSc5LpBo18kRFdV92DD_4IMFlwsUqp-WS35R5xQEXTUs8aYBqUnqyutGXBwxZtTHme4oqYrKFFahEZY-vCGtzZ_PCP1ilozDtu-0QztV6NKnQApNIhfEFY-fZGpjHl0W35FIxwLz6mvmhkRCvryyiMmdTrmGEsoSDRISIGNApocS7SGymkbAyvgXPqNUvkSpUDwuEa2Na1zEbAxqFxx-OOzShmimM"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="text-lg font-bold text-slate-900 dark:text-white truncate">Lab B2</h4>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm font-medium mt-0.5">Prof. Alami • Electronics</p>
+<div class="flex items-center gap-1.5 mt-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>Oct 25, 2023</span>
+<span class="mx-1">•</span>
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>14:00 - 16:00</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex gap-2 mt-5">
+<button class="flex-1 h-10 flex items-center justify-center gap-2 rounded-lg border border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 text-sm font-bold active:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-[20px]">close</span>
+                    Refuse
+                </button>
+<button class="flex-1 h-10 flex items-center justify-center gap-2 rounded-lg border border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 text-sm font-bold active:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+                    Modify
+                </button>
+<button class="flex-1 h-10 flex items-center justify-center gap-2 rounded-lg bg-primary text-white text-sm font-bold shadow-sm shadow-blue-500/30 active:bg-blue-600 transition-colors">
+<span class="material-symbols-outlined text-[20px]">check</span>
+                    Validate
+                </button>
+</div>
+</div>
+<!-- Request Card 3: Standard -->
+<div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 mb-4 p-4">
+<div class="flex gap-4">
+<div class="h-14 w-14 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center shrink-0 text-indigo-600 dark:text-indigo-300 text-xl font-bold">
+                    MT
+                </div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="text-lg font-bold text-slate-900 dark:text-white truncate">Salle 4</h4>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm font-medium mt-0.5">Mr. Tazi • Mathematics</p>
+<div class="flex items-center gap-1.5 mt-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>Oct 26, 2023</span>
+<span class="mx-1">•</span>
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>10:00 - 12:00</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex gap-2 mt-5">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-600 text-slate-500 dark:text-slate-400 hover:text-red-500 hover:bg-red-50 active:bg-red-100 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-600 text-slate-500 dark:text-slate-400 hover:text-primary hover:bg-blue-50 active:bg-blue-100 transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="flex-1 h-10 flex items-center justify-center gap-2 rounded-lg bg-primary text-white text-sm font-bold shadow-sm shadow-blue-500/30 active:bg-blue-600 transition-colors">
+                    Validate Request
+                </button>
+</div>
+</div>
+<!-- Empty State (Hidden, but good to have in markup structure as comment or hidden div) -->
+<div class="hidden flex flex-col items-center justify-center py-12 text-center">
+<div class="h-24 w-24 bg-slate-100 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-4xl text-slate-300">task_alt</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900">All caught up!</h3>
+<p class="text-slate-500 mt-1">No pending reservation requests.</p>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pb-safe">
+<div class="flex justify-around items-center h-16 max-w-lg mx-auto">
+<button class="flex flex-col items-center justify-center w-full h-full space-y-1 text-slate-400 dark:text-slate-500 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+<span class="text-[10px] font-medium">Dashboard</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full space-y-1 text-slate-400 dark:text-slate-500 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">calendar_month</span>
+<span class="text-[10px] font-medium">Schedule</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full space-y-1 text-primary dark:text-primary">
+<div class="relative">
+<span class="material-symbols-outlined text-[24px] filled">inbox</span>
+<span class="absolute -top-1 -right-1 flex h-2.5 w-2.5 items-center justify-center rounded-full bg-red-500 ring-2 ring-white dark:ring-slate-900"></span>
+</div>
+<span class="text-[10px] font-bold">Requests</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full space-y-1 text-slate-400 dark:text-slate-500 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</button>
+</div>
+</div>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        
+        .material-symbols-outlined.filled {
+          font-variation-settings:
+          'FILL' 1,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+    </style>
+</body></html>

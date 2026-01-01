@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Reservations</title>
+<!-- Fonts and Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2332",
+                        "text-main-light": "#0d131b",
+                        "text-main-dark": "#e2e8f0",
+                        "text-sub-light": "#4c6c9a",
+                        "text-sub-dark": "#94a3b8",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex justify-center">
+<!-- Mobile Container -->
+<div class="w-full max-w-md bg-background-light dark:bg-background-dark min-h-screen flex flex-col relative overflow-hidden shadow-2xl mx-auto">
+<!-- Header -->
+<header class="flex items-center bg-surface-light dark:bg-surface-dark px-4 py-4 justify-between sticky top-0 z-20 border-b border-gray-100 dark:border-gray-800">
+<button class="text-text-main-light dark:text-text-main-dark flex size-10 shrink-0 items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-text-main-light dark:text-text-main-dark text-lg font-bold leading-tight tracking-[-0.015em]">My Reservations</h2>
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+</header>
+<!-- Tabs -->
+<div class="bg-surface-light dark:bg-surface-dark pt-2 sticky top-[73px] z-10 shadow-sm">
+<div class="flex px-4 justify-between gap-2">
+<button class="flex flex-col items-center justify-center border-b-[3px] border-primary text-primary pb-3 pt-2 flex-1 transition-all">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Upcoming</p>
+</button>
+<button class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-text-sub-light dark:text-text-sub-dark pb-3 pt-2 flex-1 hover:text-text-main-light dark:hover:text-text-main-dark transition-all">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">History</p>
+</button>
+</div>
+</div>
+<!-- Scrollable Content -->
+<main class="flex-1 overflow-y-auto px-4 py-6 space-y-6">
+<!-- Group: This Week -->
+<div>
+<h3 class="text-text-sub-light dark:text-text-sub-dark text-xs font-bold uppercase tracking-wider mb-3 pl-1">This Week</h3>
+<!-- Card 1: Validated -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-gray-100 dark:border-gray-800 mb-3 flex gap-4 transition-transform active:scale-[0.98]">
+<!-- Image -->
+<div class="relative shrink-0 w-[70px] h-[70px] rounded-lg overflow-hidden bg-gray-200">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="University amphitheater with rows of seats" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBRFVLbMh1dZTO6vwwmuC6qmUtsvA_DV3wzjKyYYeROhPGNyURuJUbzUZQV4foHHBGeVu0dK6TFvzgxpO1rAAJ5PH-nPXElVInEAp0VbRfUvR5ZnHgGHuqL6Lsdvko3wQDSL0sMLBvVYfssK4tum7hEOW_KjJwsyIbSNRFTuPteyYJAhyFePN2g00ckPAYsQCBs7R7ICAoSqa8vnr5Jl_HWKyL9xnQnyU-mPSevzbfD9soltKh92Pf0R3U8jNVW-Uq8HlT2kzekwsI");'></div>
+<div class="absolute inset-0 bg-black/10"></div>
+</div>
+<!-- Content -->
+<div class="flex flex-1 flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-text-main-light dark:text-text-main-dark text-base font-bold leading-tight mb-1">Amphi A</h4>
+<p class="text-text-sub-light dark:text-text-sub-dark text-xs font-medium line-clamp-1">Course: Advanced Algorithms</p>
+</div>
+<!-- Status Badge: Validated -->
+<div class="shrink-0 flex items-center gap-1 bg-primary/10 dark:bg-primary/20 px-2 py-1 rounded-full">
+<div class="size-1.5 rounded-full bg-primary"></div>
+<span class="text-primary text-[10px] font-bold uppercase tracking-wide">Confirmed</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="material-symbols-outlined text-text-sub-light dark:text-text-sub-dark text-[16px]">calendar_today</span>
+<p class="text-text-sub-light dark:text-text-sub-dark text-xs font-normal">Oct 24 • 08:30 - 10:30</p>
+</div>
+</div>
+</div>
+<!-- Card 2: Pending/Requested -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-gray-100 dark:border-gray-800 mb-3 flex gap-4 transition-transform active:scale-[0.98]">
+<div class="relative shrink-0 w-[70px] h-[70px] rounded-lg overflow-hidden bg-gray-200">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Computer lab with monitors and keyboards" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB7TJF1oa-Qn72PFXXuQf2Jk6nUd_mb2L5323cP9yw7gLcbtCTYLHphYFgDlq-PpgnOugdlsYWAe00BfTWMrqIHMlRmRVhxskB6bW4h74LhbhM5F9yA4nMX7jSejKjl44qdd6f6vyce3vx49n4TIWfAdXF4LHFF0ayB5lkR_sTicuYVlB3oC4OELJpCysHewbQdrUklITWm8zHMX5Vk0ae-ZxrtrBMSpHPNIjocST4uMvSrV8b2BMQDbiq0J9r74a2N64Gi-nG2ae4");'></div>
+</div>
+<div class="flex flex-1 flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-text-main-light dark:text-text-main-dark text-base font-bold leading-tight mb-1">Lab Networks 1</h4>
+<p class="text-text-sub-light dark:text-text-sub-dark text-xs font-medium line-clamp-1">Workshop: Cisco Setup</p>
+</div>
+<!-- Status Badge: Pending -->
+<div class="shrink-0 flex items-center gap-1 bg-amber-50 dark:bg-amber-900/30 px-2 py-1 rounded-full">
+<div class="size-1.5 rounded-full bg-amber-500"></div>
+<span class="text-amber-600 dark:text-amber-400 text-[10px] font-bold uppercase tracking-wide">Pending</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="material-symbols-outlined text-text-sub-light dark:text-text-sub-dark text-[16px]">calendar_today</span>
+<p class="text-text-sub-light dark:text-text-sub-dark text-xs font-normal">Oct 26 • 14:00 - 16:00</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Group: Next Week -->
+<div>
+<h3 class="text-text-sub-light dark:text-text-sub-dark text-xs font-bold uppercase tracking-wider mb-3 pl-1">Next Week</h3>
+<!-- Card 3: Pending -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-gray-100 dark:border-gray-800 mb-3 flex gap-4 transition-transform active:scale-[0.98]">
+<div class="relative shrink-0 w-[70px] h-[70px] rounded-lg overflow-hidden bg-gray-200">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Bright modern classroom with whiteboard" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBzVrkqioRzFlr8AzuaU5YTxY91cN_JBq8kEWfDN1JH2sz3W3XqPIX44hHnstSKA1tsk-J0FobQpn4krT--LmFk0ymepD3Z9z_aTMuyodk0msqu_pKW6q49R7o8ZxAd1-_o_rRZMDAzPPTcOPQsm7eRjSfmB8grC10tzsQ2hEPIPHdpO6mOKsiPlWuWmTcLe0HQJNNsx2asqNpdGmqqOk4__uIgQ0HgW6_EEDEBQ8owppTftWJMH9dpOz2oxRWHYaulQkWgHMQdEjA");'></div>
+</div>
+<div class="flex flex-1 flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-text-main-light dark:text-text-main-dark text-base font-bold leading-tight mb-1">Room B12</h4>
+<p class="text-text-sub-light dark:text-text-sub-dark text-xs font-medium line-clamp-1">Tutorial: Physics 101</p>
+</div>
+<!-- Status Badge: Pending -->
+<div class="shrink-0 flex items-center gap-1 bg-amber-50 dark:bg-amber-900/30 px-2 py-1 rounded-full">
+<div class="size-1.5 rounded-full bg-amber-500"></div>
+<span class="text-amber-600 dark:text-amber-400 text-[10px] font-bold uppercase tracking-wide">Pending</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="material-symbols-outlined text-text-sub-light dark:text-text-sub-dark text-[16px]">calendar_today</span>
+<p class="text-text-sub-light dark:text-text-sub-dark text-xs font-normal">Nov 02 • 09:00 - 11:00</p>
+</div>
+</div>
+</div>
+<!-- Card 4: Refused -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-gray-100 dark:border-gray-800 mb-3 flex gap-4 opacity-75 grayscale-[0.5] transition-transform active:scale-[0.98]">
+<div class="relative shrink-0 w-[70px] h-[70px] rounded-lg overflow-hidden bg-gray-200">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Empty meeting room with glass walls" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDrrZXqZtxmqf1HKtzCkpBgzdV9Qs6kpok56XicUJQVdzK0aG9eCtbn2B3F9HyGACln0X5PJ_bZzyOssQ1O6RLsP0ynJJKcDPFaGgLXFYfAGAUGknNveifLXfqat1H6iOG_unB5StWaPDVb8-LT5FXVLNmH5UN1_8KupmKh80KBi_8Im32mmIRP63iGoQb2ymAby7v0MnZUf1Y_9Y7tiUsq7j12KDWxAudCbM8sOJ-m2tY1CGtga3VP3zaFITaO14pzT2pifpOm18c");'></div>
+</div>
+<div class="flex flex-1 flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-text-main-light dark:text-text-main-dark text-base font-bold leading-tight mb-1">Meeting Room 3</h4>
+<p class="text-text-sub-light dark:text-text-sub-dark text-xs font-medium line-clamp-1">Dept Meeting</p>
+</div>
+<!-- Status Badge: Refused -->
+<div class="shrink-0 flex items-center gap-1 bg-red-50 dark:bg-red-900/30 px-2 py-1 rounded-full">
+<div class="size-1.5 rounded-full bg-red-500"></div>
+<span class="text-red-600 dark:text-red-400 text-[10px] font-bold uppercase tracking-wide">Refused</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="material-symbols-outlined text-text-sub-light dark:text-text-sub-dark text-[16px]">event_busy</span>
+<p class="text-text-sub-light dark:text-text-sub-dark text-xs font-normal">Nov 05 • 09:00 - 10:00</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom spacing -->
+<div class="h-10"></div>
+</main>
+<!-- Floating Action Button (Alternative placement if header is not enough, but keeping it simple as per prompt to stick to header button) -->
+<!-- But adding a subtle gradient overlay at bottom for scroll indication -->
+<div class="pointer-events-none absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent"></div>
+</div>
+</body></html>
